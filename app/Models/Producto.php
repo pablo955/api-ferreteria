@@ -11,11 +11,11 @@ class Producto extends Model
     //
 
     protected $table = 'productos';
-  
+
     protected $primaryKey = 'id_producto';
     protected $fillable = [
         'id_categoria',
-        'id_sector', 
+        'id_sector',
         'codigo_producto',
         'nombre_producto',
         'stock_producto',
@@ -24,7 +24,7 @@ class Producto extends Model
         'fecha_modificacion_producto',
         'descripcion_producto',
         'descuento_producto',
-        'estado_producto',
+        'id_estado_producto',
         'stock_minimo',
         'imagen'
     ];

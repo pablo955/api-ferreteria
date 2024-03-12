@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	EstadoCategoriaTableSeeder::class,
         	SectorTableSeeder::class,
-        	CategoriaTableSeeder::class
+        	CategoriaTableSeeder::class,
+            MarcaTableSeeder::class
         ]);
         // $this->call(SectorTableSeeder::class);
         // $this->call(CategoriaTableSeeder::class);
