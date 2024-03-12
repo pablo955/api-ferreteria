@@ -22,8 +22,17 @@ Route::group(['prefix' => 'sector'],function(){
     //Rutas a las que se permitirá acceso
 		Route::get('/get_sectores', 'SectorController@getSectores');
 	});
+
 	// Route::group(['middleware' => 'auth:api'],function(){
 		// Route::post('Registrar_venta',[VentasController::class,'store']);
 		
 	// });
+});
+
+Route::group(['prefix' => 'categorias'],function(){
+	//Falta configuracion de permisos segun autentificacion
+	Route::group(['middleware' => ['cors']], function () {
+    //Rutas a las que se permitirá acceso
+		Route::get('/get_categorias', 'CategoriasController@getCategorias');
+	});
 });
