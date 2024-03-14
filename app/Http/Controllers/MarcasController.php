@@ -10,7 +10,7 @@ use App\Models\Marca;
 class MarcasController extends Controller
 {
     public function getMarcas(){
-        $sectores = DB::table('sector')
+        $marcas = DB::table('marcas')
         ->select(
             'id_marca',
             'descripcion_marca'

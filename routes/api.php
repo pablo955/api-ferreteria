@@ -29,6 +29,13 @@ Route::group(['prefix' => 'sector'],function(){
 	// });
 });
 
+Route::group(['prefix' => 'marcas'],function(){
+	Route::group(['middleware' => ['cors']], function () {
+    //Rutas a las que se permitirá acceso
+		Route::get('/get_marcas', 'MarcasController@getMarcas');
+	});
+});
+
 Route::group(['prefix' => 'categorias'],function(){
 	//Falta configuracion de permisos segun autentificacion
 	Route::group(['middleware' => ['cors']], function () {
