@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::group(['prefix' => 'user'] , function(){
+    Route::group(['middleware' => ['cors']], function () {
+        Route::post('/register', 'UserController@register');
+        Route::post('/login', 'UserController@login');
+        Route::put('/update','UserController@update');
+    });
 });
 
 Route::group(['prefix' => 'sector'],function(){
@@ -25,7 +35,7 @@ Route::group(['prefix' => 'sector'],function(){
 
 	// Route::group(['middleware' => 'auth:api'],function(){
 		// Route::post('Registrar_venta',[VentasController::class,'store']);
-		
+
 	// });
 });
 
